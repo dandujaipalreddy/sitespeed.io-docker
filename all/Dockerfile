@@ -18,6 +18,9 @@ nodejs \
 build-essential --no-install-recommends && \
 wget -N http://chromedriver.storage.googleapis.com/2.20/chromedriver_linux64.zip && \
 unzip chromedriver_linux64.zip && \
+RUN adduser --system --group --shell /bin/sh ppoker \
+ && mkdir /home/ppoker/bin
+USER ppoker
 rm chromedriver_linux64.zip && \
 chmod +x chromedriver && \
 mv -f chromedriver /usr/bin/chromedriver && \
