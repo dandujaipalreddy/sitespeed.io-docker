@@ -6,15 +6,16 @@ RUN apt-get update
 
 RUN apt-get install -y git
 
-RUN useradd -r -u 1000 -g --create-home --shell /bin/false app
-
-ENV HOME=/home/app
+RUN addgroup --system --gid 2718 ppoker && \
+    adduser --system --uid 2718 --gid 2718 --home /home/ppoker ppoker && \
+    
+ENV HOME=/home/ppoker
 
 RUN git clone https://github.com/sitespeedio/sitespeed.io.git $HOME/sitespeed.io
 
-RUN chown -R app:app $HOME/*
+RUN chown -R ppoker:ppoker $HOME/*
 
-USER app
+USER ppoker
 
 WORKDIR $HOME/sitespeed.io
 
