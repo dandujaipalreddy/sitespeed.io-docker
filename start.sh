@@ -1,4 +1,5 @@
 #!/bin/bash
+umask 0002
 set -e
 
 export NODE_ENV=production
