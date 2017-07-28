@@ -1,4 +1,4 @@
-FROM sitespeedio/browsers:4.0
+FROM sitespeedio/webbrowsers:firefox-54.0-chrome-60.0
 
 MAINTAINER Peter Hedenskog <peter@soulgalore.com>
 
@@ -11,7 +11,7 @@ RUN apt-get update -y && apt-get install -y \
   --no-install-recommends --force-yes && rm -rf /var/lib/apt/lists/*
 
 # Install nodejs
-RUN curl --silent --location https://deb.nodesource.com/setup_4.x | bash -  && \
+RUN curl --silent --location https://deb.nodesource.com/setup_5.x | bash -  && \
   apt-get install nodejs -y
 
 # And get sitespeed

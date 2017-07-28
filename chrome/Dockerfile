@@ -1,4 +1,4 @@
-FROM sitespeedio/chrome:48.0
+FROM sitespeedio/webbrowsers:firefox-54.0-chrome-60.0
 
 MAINTAINER Peter Hedenskog <peter@soulgalore.com>
 
@@ -7,7 +7,7 @@ MAINTAINER Peter Hedenskog <peter@soulgalore.com>
 RUN \
 apt-get update && \
 apt-get install -y curl && \
-curl --silent --location https://deb.nodesource.com/setup_4.x | bash - && \
+curl --silent --location https://deb.nodesource.com/setup_5.x | bash - && \
 apt-get install -y \
 default-jre-headless \
 git \
@@ -25,8 +25,8 @@ apt-get purge -y curl git build-essential && \
 apt-get clean autoclean && \
 rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
 
-ADD ./scripts/ /home/root/scripts
-ADD ./selenium-server-standalone-2.48.2.jar /home/root/
+ADD ./scripts/ /home/ppoker/scripts
+ADD ./selenium-server-standalone-2.48.2.jar /home/ppoker/
 
 VOLUME /sitespeed.io
 

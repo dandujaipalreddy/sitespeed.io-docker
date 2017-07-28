@@ -11,13 +11,13 @@ RUN apt-get update -y && apt-get install -y \
   --no-install-recommends --force-yes && rm -rf /var/lib/apt/lists/*
 
 # Install nodejs
-RUN curl --silent --location https://deb.nodesource.com/setup_4.x | bash -  && \
+RUN curl --silent --location https://deb.nodesource.com/setup_5.x | bash -  && \
   apt-get install nodejs -y
 
 # And get Browsertime
 RUN npm install https://github.com/tobli/browsertime#connectivity -g
 
-ADD ./scripts/ /home/root/scripts
+ADD ./scripts/ /home/ppoker/scripts
 
 VOLUME /browsertime
 

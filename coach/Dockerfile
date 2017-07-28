@@ -1,11 +1,11 @@
-FROM sitespeedio/browsers:firefox-45.0-chrome-49.0
+FROM sitespeedio/webbrowsers:firefox-54.0-chrome-60.0
 
 MAINTAINER Peter Hedenskog <peter@soulgalore.com>
 
 RUN \
 apt-get update && \
 apt-get install -y curl && \
-curl --silent --location https://deb.nodesource.com/setup_4.x | bash - && \
+curl --silent --location https://deb.nodesource.com/setup_5.x | bash - && \
 apt-get install -y \
 nodejs \
 build-essential --no-install-recommends && \
@@ -15,7 +15,7 @@ apt-get purge -y curl git build-essential && \
 apt-get clean autoclean && \
 rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
 
-ADD ./scripts/ /home/root/scripts
+ADD ./scripts/ /home/ppoker/scripts
 
 VOLUME /coach
 

@@ -1,4 +1,4 @@
-FROM ubuntu:14.04
+FROM ubuntu:16.04
 
 ENV LC_ALL C
 ENV DEBIAN_FRONTEND noninteractive
@@ -13,7 +13,7 @@ MAINTAINER Peter Hedenskog <peter@soulgalore.com>
 RUN \
 apt-get update && \
 apt-get install -y curl && \
-curl --silent --location https://deb.nodesource.com/setup_4.x | sudo bash - && \
+curl --silent --location https://deb.nodesource.com/setup_5.x | sudo bash - && \
 apt-get install -y \
 default-jre-headless \
 git \
