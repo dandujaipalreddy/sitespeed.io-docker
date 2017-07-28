@@ -7,7 +7,7 @@ RUN apt-get update
 RUN apt-get install -y git
 
 RUN addgroup --system --gid 2718 ppoker && \
-    adduser --system --uid 2718 --gid 2718 --home /home/ppoker ppoker && \
+    adduser --system --uid 2718 --gid 2718 --home /home/ppoker ppoker
     
 ENV HOME=/home/ppoker
 
