@@ -6,7 +6,7 @@ RUN apt-get update
 
 RUN apt-get install -y git
 
-RUN useradd --user-group --create-home --shell /bin/false app
+RUN useradd -r -u 1000 -g --create-home --shell /bin/false app
 
 ENV HOME=/home/app
 
