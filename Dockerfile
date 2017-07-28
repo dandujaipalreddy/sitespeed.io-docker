@@ -1,4 +1,4 @@
-FROM sitespeedio/webbrowsers:firefox-49.0-chrome-54.0
+FROM sitespeedio/webbrowsers:firefox-54.0-chrome-60.0
 
 COPY start.sh /start.sh
 
